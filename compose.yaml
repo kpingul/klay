@@ -1,0 +1,10 @@
+services:
+  cyber-agent:
+    build: .
+    container_name: cyber-agent
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
